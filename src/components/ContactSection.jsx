@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
+import githubLogo from "../assets/socialLinks/GitHub-logo.jpg";
+import linkedinLogo from "../assets/socialLinks/LinkedIn_icon.svg.webp";
+import instagramLogo from "../assets/socialLinks/instagramLogo.avif";
+import gmailLogo from "../assets/socialLinks/gmail.png";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -39,28 +43,24 @@ const ContactSection = () => {
                 <div className="flex gap-4">
                   {[
                     {
-                      emoji: "🔗",
-                      link: "https://github.com",
+                      icon: githubLogo,
+                      link: "https://github.com/aashish0770",
                       label: "GitHub",
-                      color: "hover:text-gray-400",
                     },
                     {
-                      emoji: "💼",
-                      link: "https://linkedin.com",
+                      icon: linkedinLogo,
+                      link: "https://www.linkedin.com/in/aashish-timalsina-29a866267/",
                       label: "LinkedIn",
-                      color: "hover:text-blue-400",
                     },
+                    // {
+                    //   icon: instagramLogo,
+                    //   link: "https://instagram.com",
+                    //   label: "Instagram",
+                    // },
                     {
-                      emoji: "🐦",
-                      link: "https://twitter.com",
-                      label: "Twitter",
-                      color: "hover:text-sky-400",
-                    },
-                    {
-                      emoji: "📧",
-                      link: "mailto:your.email@example.com",
+                      icon: gmailLogo,
+                      link: "mailto:ssuzzan81@gmail.com",
                       label: "Email",
-                      color: "hover:text-purple-400",
                     },
                   ].map((social, i) => (
                     <motion.a
@@ -69,10 +69,15 @@ const ContactSection = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.2, y: -5 }}
-                      className={`w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center ${social.color} transition-colors duration-300 text-2xl`}
+                      className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center transition-all duration-300 border border-gray-700 hover:border-blue-500/50 shadow-sm"
                       title={social.label}
                     >
-                      {social.emoji}
+                      <img
+                        src={social.icon}
+                        alt={`${social.label} logo`}
+                        className="h-full w-full object-contain"
+                        loading="lazy"
+                      />
                     </motion.a>
                   ))}
                 </div>
