@@ -6,12 +6,21 @@ import linkedinLogo from "../assets/socialLinks/LinkedIn_icon.svg.webp";
 import instagramLogo from "../assets/socialLinks/instagramLogo.avif";
 import gmailLogo from "../assets/socialLinks/gmail.png";
 
+const emailAddress = "ssuzzan81@gmail.com";
+const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+  emailAddress
+)}`;
+
 const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
+
+  const openGmailCompose = () => {
+    window.open(gmailComposeUrl, "_blank", "noopener,noreferrer");
+  };
 
   const handleSubmit = () => {
     window.location.href = `mailto:your.email@example.com?subject=Contact from ${formData.name}&body=${formData.message}`;
@@ -35,9 +44,21 @@ const ContactSection = () => {
               <div className="space-y-6">
                 <h3 className="text-2xl font-bold mb-6">Let's Connect</h3>
                 <p className="text-gray-400 mb-8">
-                  I'm always open to discussing new projects, creative ideas, or
-                  opportunities to be part of your vision. Feel free to reach
-                  out!
+                  <span>
+                    I'm always open to discussing new projects, creative ideas,
+                    or opportunities to be part of your vision. Feel free to
+                    reach out!
+                  </span>{" "}
+                  <br />
+                  <button
+                    type="button"
+                    onClick={openGmailCompose}
+                    className="text-blue-400 hover:underline font-semibold"
+                  >
+                    Email: {emailAddress}
+                  </button>
+                  <br />
+                  <span>Contact: 0407587191</span>
                 </p>
 
                 <div className="flex gap-4">
@@ -59,7 +80,7 @@ const ContactSection = () => {
                     // },
                     {
                       icon: gmailLogo,
-                      link: "mailto:ssuzzan81@gmail.com",
+                      link: gmailComposeUrl,
                       label: "Email",
                     },
                   ].map((social, i) => (
