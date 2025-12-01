@@ -1,5 +1,17 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, useAnimationControls } from "framer-motion";
+import expressJsLogo from "../assets/icons/expressJs.png";
+import javascriptLogo from "../assets/icons/javascript.png";
+import flaskLogo from "../assets/icons/flask.png";
+import mongoDbLogo from "../assets/icons/mongooDb.png";
+import reactLogo from "../assets/icons/react.png";
+import nodeLogo from "../assets/icons/nodejs.png";
+import typescriptLogo from "../assets/icons/typescript.png";
+import gitLogo from "../assets/icons/git.png";
+import muiLogo from "../assets/icons/MUI.png";
+import tailwindLogo from "../assets/icons/twailwind.png";
+import pythonLogo from "../assets/icons/python.png";
+import javaLogo from "../assets/icons/java.png";
 
 const AnimatedSection = ({ children }) => {
   return (
@@ -24,76 +36,76 @@ const SkillsSection = () => {
   const skills = [
     {
       name: "ReactJS",
-      logo: "⚛️",
+      logo: reactLogo,
       mastery: 5,
       description: "Built 15+ production apps with React, Redux, and Hooks.",
     },
     {
       name: "JavaScript",
-      logo: "🟨",
+      logo: javascriptLogo,
       mastery: 5,
       description: "Deep understanding of ES6+ and modern JS patterns.",
     },
     {
       name: "NodeJS",
-      logo: "🟢",
+      logo: nodeLogo,
       mastery: 4,
       description: "Created RESTful APIs, microservices, and real-time apps.",
     },
     {
       name: "MongoDB",
-      logo: "🍃",
+      logo: mongoDbLogo,
       mastery: 4,
       description:
         "Designed optimized database schemas for large-scale applications.",
     },
     {
       name: "ExpressJS",
-      logo: "🚂",
+      logo: expressJsLogo,
       mastery: 4,
       description:
         "Built robust backend systems with authentication and middleware.",
     },
     {
       name: "TypeScript",
-      logo: "📘",
+      logo: typescriptLogo,
       mastery: 3,
       description: "Leveraged type safety in medium to large projects.",
     },
     {
       name: "Git",
-      logo: "🔀",
+      logo: gitLogo,
       mastery: 4,
       description: "Version control expert with branching strategies.",
     },
     {
       name: "MUI",
-      logo: "🎨",
+      logo: muiLogo,
       mastery: 4,
       description: "Created custom themes and components for enterprise UIs.",
     },
     {
       name: "Tailwind CSS",
-      logo: "💨",
+      logo: tailwindLogo,
       mastery: 5,
       description: "Master of utility-first CSS and responsive modern designs.",
     },
     {
       name: "Python",
-      logo: "🐍",
+      logo: pythonLogo,
       mastery: 3,
       description:
         "Experience with scripting, data analysis, and web scraping.",
     },
     {
       name: "Flask",
-      logo: "🍶",
+      logo: flaskLogo,
       mastery: 3,
       description: "Built lightweight web applications and APIs.",
     },
     {
       name: "Java",
-      logo: "☕",
+      logo: javaLogo,
       mastery: 3,
       description:
         "Developed desktop and web applications using Java SE and EE.",
@@ -260,8 +272,12 @@ const SkillsSection = () => {
                   onMouseLeave={handleHoverEnd}
                 >
                   <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-blue-500 transition-all duration-300 h-40 flex flex-col items-center justify-center relative cursor-pointer">
-                    <div className="text-6xl mb-3 transition-transform duration-300">
-                      {skill.logo}
+                    <div className="w-full h-full mb-3 transition-transform duration-300">
+                      <img
+                        src={skill.logo}
+                        alt={`${skill.name} logo`}
+                        className="w-full h-full object-contain drop-shadow-md"
+                      />
                     </div>
                     <p className="text-sm font-semibold text-center text-white">
                       {skill.name}
