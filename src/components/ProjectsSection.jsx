@@ -1,5 +1,14 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import profile from "../assets/projectLogo/profile.png";
+import BMW from "../assets/projectLogo/BMW.png";
+import RodhiFlix from "../assets/projectLogo/rofhiflix.png";
+import football from "../assets/projectLogo/football.jpg";
+import marketplace from "../assets/projectLogo/marketplace.png";
+import movieTicket from "../assets/projectLogo/movie-ticket.png";
+import streakforce from "../assets/projectLogo/streakforce.svg";
+import VetumNaTa from "../assets/projectLogo/VetumNaTa.png";
+import MyAcademy from "../assets/projectLogo/myAcadmey.png";
 
 const AnimatedSection = ({ children }) => {
   return (
@@ -21,7 +30,7 @@ const ProjectsSection = () => {
     organization: [
       {
         title: "RodhiFlix",
-        icon: "🎬",
+        icon: RodhiFlix,
         tech: ["React", "Node.js", "Express", "MongoDB", "Bootstrap", "Redux"],
         description:
           "OTT platform with pay-per-view movies and shows for the Gurung community of Nepal. Features video streaming, payment integration, and content management.",
@@ -30,7 +39,7 @@ const ProjectsSection = () => {
       },
       {
         title: "BookMeWorld",
-        icon: "🏨",
+        icon: BMW,
         tech: ["MERN Stack", "Tailwind CSS", "MUI", "Chart.js"],
         description:
           "Unified booking platform for hotels, clubs, events, and lounges. Includes admin panel with analytics and comprehensive booking management system.",
@@ -39,7 +48,7 @@ const ProjectsSection = () => {
       },
       {
         title: "VetaManta",
-        icon: "🤝",
+        icon: VetumNaTa,
         tech: ["Node.js", "MongoDB", "Kotlin", "Swift", "React", "MUI"],
         description:
           "Mobile app to meet people in real life, including celebrities. Features inner wallet system with real money loading, automatic refunds, and cross-platform support.",
@@ -50,7 +59,7 @@ const ProjectsSection = () => {
     college: [
       {
         title: "Movie Ticket Booking",
-        icon: "🎟️",
+        icon: movieTicket,
         tech: ["C++"],
         description:
           "Cinema ticket booking system built for college project. Features seat selection, booking management, and ticket generation.",
@@ -59,7 +68,7 @@ const ProjectsSection = () => {
       },
       {
         title: "MYacademy",
-        icon: "📚",
+        icon: MyAcademy,
         tech: ["PHP", "SQL", "React"],
         description:
           "E-learning platform similar to Udemy. Includes course management, video lectures, quizzes, and student progress tracking.",
@@ -68,7 +77,7 @@ const ProjectsSection = () => {
       },
       {
         title: "RealState B2B",
-        icon: "🏢",
+        icon: marketplace,
         tech: ["Java", "SQL"],
         description:
           "B2B real estate platform for buying, selling, and renting properties. Features property listings, search filters, and transaction management.",
@@ -76,9 +85,18 @@ const ProjectsSection = () => {
         category: "college",
       },
       {
+        title: "Football Ecommerce",
+        icon: football,
+        tech: ["php", "MySQL", "Bootstrap"],
+        description:
+          "E-commerce website for football merchandise. Features product catalog, shopping cart, and payment integration.",
+        link: "#",
+        category: "college",
+      },
+      {
         title: "StreakForce",
-        icon: "🔥",
-        tech: ["MERN Stack"],
+        icon: streakforce,
+        tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
         description:
           "Habit tracking app where you create habits and invite others to join. Features streak tracking based on completion, social accountability, and progress visualization.",
         link: "#",
@@ -88,7 +106,7 @@ const ProjectsSection = () => {
     Personal: [
       {
         title: "Personal Portfolio",
-        icon: "💼",
+        icon: profile,
         tech: ["React", "Tailwind CSS", "Framer Motion"],
         description:
           "My personal portfolio website showcasing my skills, projects, and experience as a full-stack developer.",
@@ -165,7 +183,14 @@ const ProjectsSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
 
                 <div className="relative bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 h-full flex flex-col">
-                  <div className="text-6xl mb-4">{project.icon}</div>
+                  <div className="mb-6">
+                    <img
+                      src={project.icon}
+                      alt={`${project.title} logo`}
+                      className="h-32 w-32 object-contain drop-shadow-sm"
+                      loading="lazy"
+                    />
+                  </div>
 
                   {/* Category Badge */}
                   <span className="absolute top-4 right-4 px-3 py-1 bg-purple-600/20 text-purple-400 text-xs rounded-full border border-purple-500/30 capitalize">
